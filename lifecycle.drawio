@@ -1,1 +1,134 @@
-<mxfile host="app.diagrams.net" modified="2022-07-07T15:46:24.803Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36" version="20.0.4" etag="MiD4dqFSAV2smNgWqW1d" type="github"><diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">7VhZc9MwEP41Hp5gfBQnecRp0wKhU2ihw6NiK7aI7DWynINfzyqWYzsOOYD0yDQv0a43K2m/b4/YcPrx/FKQNPoEAeWGbQZzwzk3bNuybQe/lGZRaLq9bqEIBQu0UaW4Zb+oVppam7OAZg1DCcAlS5tKH5KE+rKhI0LArGk2Bt7cNSUhbSlufcLb2nsWyEjfwu5U+ivKwqjc2XJ7xZOYlMb6JllEApjVVM6F4fQFgCxW8bxPuQpeGZf794t7Ppy4lx8+Zz/JV+/j3fW314WzwSE/WV1B0ET+X9d24XpKeK7jpe8qF2UABeRJQJUT03C8SMYclxYuf1ApFxpwkktAFQgZQQgJ4UOAVNuNIZHazFIyTYJ3CliURxz8SaEaMM71Hihp+y5KmRQwWWGnHKyAUMacjCj3iD8JlwftAweBjxJIqHIVIBn0XarDXVRab8/YagwyyIVPt9jpbJFEhHSbP7ewU+er8VQjd0khplIs0EBQTiSbNslMdE6EK7sKd1xo6A+ggdOiwZDEqcp6oFnySuJqBmKyhRsKl1nEJL1NyTJAMywnTb7UeYBX9UJOskyjuAPkw0CaUiHpfGtYy6euzu2yuGlxVlUKq0z/qFYlzswjAXHWAuI7Fs+XlPyXlHT3TMmyY+3MSU2Wkhh7p6j2dAMskTUTGI8zPNg6dVYb/j2b3rbYdA0tMu3G41nT7ZHI1DmMS9aT55L7hxbhcgyDNxK4CtUq5XkYIlnQXWI4g3btiiAe5dnudtHAWDFoQGLGVbyuKJ9SyXyyoakQzkLc99xHuKnYTB7ckiUhSm4l3S3JivX3iM2m02w2K7nebcwN3aZ7rG7TaWF6g+gV0NkmX+J7Yh3fsddA6D12y+/uU6SfdQl+8I5fVtPdLd/as0xr9phvHPw0CPT0p4DeXjPlyxhwHIbZpzYIlCes8cnL+ag9CYxykSwHAcjlyySwbRKwNzWhB50EykJYA/ULTQlDMM3hKc4B6//8z5zHngPKStGEgKuY2maRYSeGwfos5ljHwwDF6k1tUQqr993OxW8=</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-07-07T16:07:14.188Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36" etag="rZpsjBy8Oitt9THfr9ms" version="20.0.4" type="github">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="946" dy="593" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="uH_yceuaJuuJ4fB2Pd2Y-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="A person wants to join the DAO" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="346" y="90" width="136" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-0" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Contributor Lifecycle&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="289" y="20" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-1" target="uH_yceuaJuuJ4fB2Pd2Y-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-1" value="The person undertakes the KYC" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="354" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-4" target="uH_yceuaJuuJ4fB2Pd2Y-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-10" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;No&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" vertex="1" connectable="0" parent="uH_yceuaJuuJ4fB2Pd2Y-7">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-4" target="uH_yceuaJuuJ4fB2Pd2Y-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-11" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="uH_yceuaJuuJ4fB2Pd2Y-9">
+          <mxGeometry x="-0.2" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-4" value="Did KYC pass?" style="rhombus;whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="374" y="340" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-6" value="End" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="514" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-8" target="uH_yceuaJuuJ4fB2Pd2Y-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-8" value="Operator transfers a share from the DAO to the person wallet by signing a transaction on the blockchain" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="336" y="510" width="156" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;dashed=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-12" target="uH_yceuaJuuJ4fB2Pd2Y-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-12" target="uH_yceuaJuuJ4fB2Pd2Y-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-12" value="The person has now Shareholder status" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="354" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-15" value="Now the shareholder receives Teledisko dividends" style="shape=note;size=20;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="610" y="650" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;dashed=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-18" target="uH_yceuaJuuJ4fB2Pd2Y-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-18" target="uH_yceuaJuuJ4fB2Pd2Y-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-18" value="The person wants to participate to the DAO" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="354" y="800" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-21" value="Propose resolutions and vote" style="shape=note;size=20;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="610" y="780" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-29" target="uH_yceuaJuuJ4fB2Pd2Y-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-29" value="The person (or who on behalf of them) emails the DAO proposing themselves as contributor" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="341" y="930" width="146" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-31" target="uH_yceuaJuuJ4fB2Pd2Y-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-31" value="The DAO creates a resolution to promote the person to Contributor" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="341" y="1060" width="146" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-35" target="uH_yceuaJuuJ4fB2Pd2Y-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-39" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="uH_yceuaJuuJ4fB2Pd2Y-38">
+          <mxGeometry x="-0.3824" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-35" target="uH_yceuaJuuJ4fB2Pd2Y-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-42" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="uH_yceuaJuuJ4fB2Pd2Y-41">
+          <mxGeometry x="-0.14" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-35" value="Resolution passes?" style="rhombus;whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="366" y="1200" width="96" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-37" value="End" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="530" y="1220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-40" target="uH_yceuaJuuJ4fB2Pd2Y-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-40" value="Operator signs a transaction to assign the Contributor role to the person" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="1380" width="126" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-43" target="uH_yceuaJuuJ4fB2Pd2Y-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-43" value="Operator signs a transaction to assign the Contributor role to the person" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="1510" width="126" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="uH_yceuaJuuJ4fB2Pd2Y-45" target="uH_yceuaJuuJ4fB2Pd2Y-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-45" value="The person can now create pre-draft resolutions and vote" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="1650" width="126" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uH_yceuaJuuJ4fB2Pd2Y-47" value="End" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="354" y="1770" width="119" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
