@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-07-08T09:58:38.818Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36" etag="UOM8Uot6kOI11zeU-sZ0" version="20.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-07-08T10:06:38.169Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36" etag="7N9TKMC4umc7cRdVEPlW" version="20.0.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="946" dy="1762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="946" dy="1698" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -23,10 +23,10 @@
             <mxPoint y="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="7JPFYaJkHymQc1CVauYX-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="p6B5cSZv_JR1WM5m22Rt-3" target="7JPFYaJkHymQc1CVauYX-0">
+        <mxCell id="7JPFYaJkHymQc1CVauYX-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="p6B5cSZv_JR1WM5m22Rt-3" target="7JPFYaJkHymQc1CVauYX-0" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="7JPFYaJkHymQc1CVauYX-2" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="7JPFYaJkHymQc1CVauYX-1">
+        <mxCell id="7JPFYaJkHymQc1CVauYX-2" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="7JPFYaJkHymQc1CVauYX-1" vertex="1" connectable="0">
           <mxGeometry x="-0.2222" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -138,21 +138,7 @@
         <mxCell id="p6B5cSZv_JR1WM5m22Rt-70" value="A new draft resolution is approved and a snapshot of delegations and voting powers is taken&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="342" y="-50" width="144" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="p6B5cSZv_JR1WM5m22Rt-99" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Delegation&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1120" y="-120" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="p6B5cSZv_JR1WM5m22Rt-102" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="p6B5cSZv_JR1WM5m22Rt-100" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1150" y="110" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="p6B5cSZv_JR1WM5m22Rt-100" value="A contributor A delegates contributor B for future resolutions&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1078" y="-60" width="144" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="p6B5cSZv_JR1WM5m22Rt-131" value="B voting power - A voting power is added to the resolution vote decided by B" style="whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1314" y="625" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="7JPFYaJkHymQc1CVauYX-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="7JPFYaJkHymQc1CVauYX-0" target="p6B5cSZv_JR1WM5m22Rt-25">
+        <mxCell id="7JPFYaJkHymQc1CVauYX-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="7JPFYaJkHymQc1CVauYX-0" target="p6B5cSZv_JR1WM5m22Rt-25" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="412" y="730" />
@@ -160,7 +146,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="7JPFYaJkHymQc1CVauYX-0" value="Contributor&#39;s voting power counts as NO vote if no previous votes were given" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="7JPFYaJkHymQc1CVauYX-0" value="Contributor&#39;s voting power counts as NO vote if no previous votes were given" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="344" y="620" width="136" height="70" as="geometry" />
         </mxCell>
       </root>
