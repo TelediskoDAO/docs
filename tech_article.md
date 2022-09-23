@@ -83,7 +83,7 @@ The logic has been implemented with the [`TelediskoToken`](https://github.com/Te
 
 "Beefed-up" in the sense that we needed to implement different levels of "freedom" for the tokens (remember when we were talking aobut "socialistic on the inside, capitalistic on the inside"?).
 
-All tokens that are not owner by Contributors (information available in the `ShareholderRegistry`) are free to move.
+All tokens that are not owned by Contributors (information available in the `ShareholderRegistry`) are free to move.
 
 For the others, we implemented a basic order book functionality within the token itself:
 
@@ -92,15 +92,38 @@ For the others, we implemented a basic order book functionality within the token
 * Tokens are locked until 7 days after the first offer.
 
 All of this easily visualizable (and doable) from our Dapp
-![Architecture](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/architecture.png)
+![Token Page](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/token_page.png)
 
-Currently, the acceptance of the offer and the transfer of the monetary amount to the token holder is done via a multisig wallet. But we are working to integrate EEUR in our ecosystem and have a fully automated escrow mechanism inside the Smart Contracts.
+Currently, the acceptance of the offer and the transfer of the monetary amount to the token-holder is done more or less manually (a multisig wallet changes the state contract, Euros are transferred via bank-wire). But we are working to integrate EEUR in our ecosystem and have a fully automated escrow mechanism inside the Smart Contracts.
 
 We used ERC20 even in this case, because (on top of the same reasons expressed for the ShareholderRegistry), the legal documents explicitly talk mention `tokens` as the legal tender of the DAO.
 
-## Snapshotting
-## Voting
+## Governance and Snapshotting
+
+The governance of the DAO is regulated throughout the whole SHA and AoA, with legal obligations related to the proposal and execution of the resolutions.
+
+Among the many points that we implemented in the DAO, one of them had a quite pervasive implication in the architecture of the Smart Contracts, namely `7.4` of the SHA:
+
+`The number of tokens being taken into account for a DAO vote and their allocation between Shareholders will be fixed on a day the DAO vote is announced. Subsequent transactions with tokens are not taken into account.`
+
+In simple words: the voting power of each Contributor of the DAO depends on the time the resolution has been created. So if A had 42 tokens on 22nd September 2022, the Draft Resolution #9 is approved on 23nd September 2022 and A transfers 3 tokens afterward, A will still have a voting power of 42 for Resolution #9.
+
+Same applies for delegation, demotion (when a Contributor is removed from the DAO), etc. Namely: if A delegated B on 22nd September 2022, the Draft Resolution #9 is approved on 23nd September 2022 and A redelegates C afterward, B will still be delegated for Resolution #9.
+
+Basically most of the state of the DAO had to be *snapshottable*, with snapshots taken every time a draft resolution is approved by the managing board.
+
+![Unnecessary but street-credits worth meme](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/meme.png)
+
+The base logic is implemented in [`Snapshottable`](https://github.com/TelediskoDAO/contracts/blob/main/contracts/extensions/Snapshottable.sol), that is inherited by all the contracts of the DAO.
+
+Each contract has then, for each relevant state-reading function, a default version and an `at` version. For instance, TelediskoToken has  `balanceOf` and `balanceOfAt`, the former used to know the balance of an address for a given resolution id.
+
+The logic was inspired by the [OpenZeppelin `ERC20Snapshot` contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/ERC20Snapshot.sol), extended to support our state versionining requirements.
+
 ## Content Delivery: The Graph
+
+
+
 ## Upgradeability
 ## Incremental Decentralization
 ## Next steps: EEUR
