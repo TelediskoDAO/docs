@@ -92,7 +92,7 @@ For the others, we implemented a basic order book functionality within the token
 * Tokens are locked until 7 days after the first offer.
 
 All of this easily visualizable (and doable) from our Dapp
-![Token Page](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/token_page.png)
+![Token Page](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/tokens_page.png)
 
 Currently, the acceptance of the offer and the transfer of the monetary amount to the token-holder is done more or less manually (a multisig wallet changes the state contract, Euros are transferred via bank-wire). But we are working to integrate EEUR in our ecosystem and have a fully automated escrow mechanism inside the Smart Contracts.
 
