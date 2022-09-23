@@ -122,8 +122,59 @@ The logic was inspired by the [OpenZeppelin `ERC20Snapshot` contract](https://gi
 
 ## Content Delivery: The Graph
 
+The state of our DAO is tracked by two main entities:
 
+* IPFS: for the more verbose type of content, such as the resolution texts
+* Smart Contracts: for everything else
+
+As some of you probably already know, Smart Contracts are not the best "content delivery" service that a dapp could possibly have.
+
+For simple dapps, maybe it's sufficient to interact directly with the Smart Contract (for instance if we only need to display the current balance of ERC20 token holder), but for more complex use cases, there are is a complication: the query interface: a Smart Contract is not a DB engine and has such, it offers very limited data access capabilities. The developer has to know ahead of time all the needed access patterns in order to provide functions able to serve that.
+
+To address this issue, we decided to leverage [The Graph](https://thegraph.com/en/), *an indexing protocol for querying networks like Ethereum and IPFS.*
+
+What The Graph does is to listen to all events coming from a specific Smart Contract and collect its data in a structured format, ready to be queried via GraphQL. The indexing logic can be customized at will.
+
+If the Smart Contract events refer to immutable data (such as anything hosted on IPFS), it's also possible to include that inside the data model.
+
+It's pretty handy as it allows a certain degree of freedom in the creation of the dapp and any other read-only functionality related to the DAO.
+
+For querying, it's possible to use the so-called **Graph Studio**, which is the decentralized network of indexers and curators that offers its data delivery service for a small fee (to be paid in GRT, Graph Token).
+
+Given that EVMOS is currently not supported though, we had to spin-up our own indexer and IPFS node. We hope it's only a temporary solution.
+
+Our data model and indexing logic is implemented in [its own repository](https://github.com/TelediskoDAO/subgraph).
+
+One example:
+```
+export function handleResolutionRejected(event: ResolutionRejected): void {
+  const resolutionIdStringified = event.params.resolutionId.toString();
+  const resolutionEntity = Resolution.load(resolutionIdStringified);
+
+  if (resolutionEntity) {
+    resolutionEntity.rejectTimestamp = event.block.timestamp;
+    resolutionEntity.rejectBy = event.transaction.from;
+
+    resolutionEntity.save();
+    return;
+  }
+
+  log.error("Trying to reject non-existing resolution {}", [
+    resolutionIdStringified,
+  ]);
+}
+```
+
+This code snippet is what makes sure that each rejected resolution is marked as such inside our data-model, allowing us to show it in our dapp:
+
+![Rejected Resolutions](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/rejected.png)
+
+If you need help setting up your graph node with IPFS for your EVMOS project, feel free to get in touch with us!
 
 ## Upgradeability
 ## Incremental Decentralization
+
+- temporary permissions to operator role
+- resolutions could already be automated (with call data field)
+
 ## Next steps: EEUR
