@@ -69,7 +69,36 @@ The contract also provides some utility methods that the other contracts can use
 The usage of tokens to deal with the shares was not explicitely required by the legal documentation. It was a technical decision that allowed us to more easily implement the logic by re-using existing compoents. It also allowed the implementation of the Smart Contract to match more closely the specific words of the SHA.
 
 ## Tokenomics
+The tokenomics of this DAO is probably what distinguish it from most of the existing ones. As its founder said, 
 
+> The system is socialist on the inside, capitalist on the outside.
+
+The way tokens are managed inside the DAO makes sure no speculative or profit-maximising behaviour is incentivized. 
+
+On the other side, once the tokens "leave the DAO", they become free to be traded as widly and heartlessly as it gets.
+
+Chapters `4.` and `10.` of the SHA provide all the necessary information about what the tokens of teledisko represent and how they should be regulated.
+
+The logic has been implemented with the [`TelediskoToken`](https://github.com/TelediskoDAO/contracts/tree/main/contracts/TelediskoToken). This is a beefed-up ERC20 Smart Contract.
+
+"Beefed-up" in the sense that we needed to implement different levels of "freedom" for the tokens (remember when we were talking aobut "socialistic on the inside, capitalistic on the inside"?).
+
+All tokens that are not owner by Contributors (information available in the `ShareholderRegistry`) are free to move.
+
+For the others, we implemented a basic order book functionality within the token itself:
+
+* Contributors are able to offer their tokens to other contributor.
+* Other contributors are able to receive offered tokens.
+* Tokens are locked until 7 days after the first offer.
+
+All of this easily visualizable (and doable) from our Dapp
+![Architecture](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/architecture.png)
+
+Currently, the acceptance of the offer and the transfer of the monetary amount to the token holder is done via a multisig wallet. But we are working to integrate EEUR in our ecosystem and have a fully automated escrow mechanism inside the Smart Contracts.
+
+We used ERC20 even in this case, because (on top of the same reasons expressed for the ShareholderRegistry), the legal documents explicitly talk mention `tokens` as the legal tender of the DAO.
+
+## Snapshotting
 ## Voting
 ## Content Delivery: The Graph
 ## Upgradeability
