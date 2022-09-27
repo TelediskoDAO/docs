@@ -1,5 +1,20 @@
-# TelediskoDAO: a technical overview
-## Intro and Vision
+# Technical journey into the Neokingdom DAO
+## Introduction
+
+Neokingdom DAO is relatively new but very ambitious experiment whose inceptions dates back to 2016.
+
+The basic idea is to provide the legal and technical framework to create DAOcracies, namely companies running with the same founding principles of a DAO.
+
+In a nutshell:
+
+* Contributors invest their time and earn tokens
+* Tokens can be used to get dividends and vote on the DAO's Resolutions
+* Tokens can also be sold internally or pledged to the DAO, at the nominal value of 1 EURO (yep, people need to pay the rent)
+* 
+
+EVM based, legally compliant, DAOs
+
+## Vision
 In the canonical employment model, employees and companies have two different goals. Employees, even if they want, are not included in the decisional process of the company, and they don't have access to dividends (if the company is doing well all they can aim for is a salary raise).
 
 Companies, on the other side, need to maximize their profits. From squeezing their employees as much as possible to compulsive hirings and layoffs, companies find their way to survive in the market at the expense of their employees.
@@ -25,7 +40,7 @@ Creating the groundwork to bring the first Neokingdom DAO to life (Teledisko DAO
 
 Since its inception, more than a year has been spent by the team to get the legal foundation that could guarantee the lawfulness of our initiative. It will take time for our DAO framework to merge perfectly with the Estonian legal framework. But given how closely we worked with the Estonian government, we are confident that any upcoming issue will be addressable without legal troubles.
 
-Once the first draft of the [Article of Association](https://github.com/TelediskoDAO/legal/blob/main/AoA.md)and the [Shareholders' Agreement (SHA)](https://github.com/TelediskoDAO/legal/blob/main/SHA.md) has been completed, we started developing the Smart Contracts and the dApp on top.
+Once the first draft of the [Article of Association](https://github.com/TelediskoDAO/legal/blob/main/AoA.md) and the [Shareholders' Agreement (SHA)](https://github.com/TelediskoDAO/legal/blob/main/SHA.md) has been completed, we started developing the Smart Contracts and the dApp on top.
 
 The main challenge for the development of this first implementation of the DAO has been the connection between law and code.
 
@@ -34,19 +49,19 @@ When we needed to start developing the Smart Contracts, we actually decided to s
 ## General Architecture
 The system architecture has 4 layers:
 
-* Legal: Article of Association and Shareholder Agreement. This is the layer connecting metaverse to universe, code to law. Everything that has been implemented, used this layer as a list of requirements.
-* Smart Contracts: this is the code implementing the law, running on EVMOS.
-* Content Delivery: we use The Graph to collect and structure our on-chain information, for easy and expedite access.
-* Mailer: a cloudfront worker sending out emails to the relevant DAO participant about legally sensitive events
-* Dapp: this is the access point for the Contributors of the DAO and the general public, willing to look at its development
+1. Legal: Article of Association and Shareholder Agreement. This is the layer connecting metaverse to universe, code to law. Everything that has been implemented, used this layer as a list of requirements.
+2. Smart Contracts: this is the code implementing the law, running on EVMOS.
+3. Content Delivery: we use The Graph to collect and structure our on-chain information, for easy and expedite access.
+4. Clients:
+   1. Mailer: a cloudfront worker sending out emails to the relevant DAO participant about legally sensitive events
+   2. Dapp: this is the access point for the Contributors of the DAO and the general public, willing to look at its development
+
 ![Architecture](https://raw.githubusercontent.com/TelediskoDAO/docs/main/architecture.png)
 
 ## Shares and Permissions
 Point `2.` of the SHA describes in aboundant detail the process of joining the DAO as Shareholder and as a Contributor. What ultimately discriminates a DAO Shareholder from any other person is described in point `2.1.3`
 
-```
-Upon accepting a person as a new shareholder of DAO, DAO shall insert the person into the shareholders' register and gift or sell such person 1 DAO share with the nominal value of EUR 1;
-```
+> `Upon accepting a person as a new shareholder of DAO, DAO shall insert the person into the shareholders' register and gift or sell such person 1 DAO share with the nominal value of EUR 1;`
 
 The possession of this nominal share is what ultimately defines the rights of the Shareholder with respect to the DAO: voting rights, dividend rights, etc.
 
@@ -92,6 +107,7 @@ For the others, we implemented a basic order book functionality within the token
 * Tokens are locked until 7 days after the first offer.
 
 All of this easily visualizable (and doable) from our Dapp
+
 ![Token Page](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/tokens_page.png)
 
 Currently, the acceptance of the offer and the transfer of the monetary amount to the token-holder is done more or less manually (a multisig wallet changes the state contract, Euros are transferred via bank-wire). But we are working to integrate EEUR in our ecosystem and have a fully automated escrow mechanism inside the Smart Contracts.
@@ -104,7 +120,7 @@ The governance of the DAO is regulated throughout the whole SHA and AoA, with le
 
 Among the many points that we implemented in the DAO, one of them had a quite pervasive implication in the architecture of the Smart Contracts, namely `7.4` of the SHA:
 
-`The number of tokens being taken into account for a DAO vote and their allocation between Shareholders will be fixed on a day the DAO vote is announced. Subsequent transactions with tokens are not taken into account.`
+> `The number of tokens being taken into account for a DAO vote and their allocation between Shareholders will be fixed on a day the DAO vote is announced. Subsequent transactions with tokens are not taken into account.`
 
 In simple words: the voting power of each Contributor of the DAO depends on the time the resolution has been created. So if A had 42 tokens on 22nd September 2022, the Draft Resolution #9 is approved on 23nd September 2022 and A transfers 3 tokens afterward, A will still have a voting power of 42 for Resolution #9.
 
@@ -129,7 +145,7 @@ The state of our DAO is tracked by two main entities:
 
 As some of you probably already know, Smart Contracts are not the best "content delivery" service that a dapp could possibly have.
 
-For simple dapps, maybe it's sufficient to interact directly with the Smart Contract (for instance if we only need to display the current balance of ERC20 token holder), but for more complex use cases, there are is a complication: the query interface: a Smart Contract is not a DB engine and has such, it offers very limited data access capabilities. The developer has to know ahead of time all the needed access patterns in order to provide functions able to serve that.
+For simple dapps, maybe it's sufficient to interact directly with the Smart Contract (for instance if we only need to display the current balance of ERC20 token holder), but for more complex use cases, there is a complication: the query interface. A Smart Contract is not a DB engine and has such, it offers very limited data access capabilities. The developer has to know ahead of time all the needed access patterns in order to provide functions able to serve that. Imagine having to join multiple data sets or aggregate/filter a long list of data points: would you really like to implement this logic in the Smart Contract?
 
 To address this issue, we decided to leverage [The Graph](https://thegraph.com/en/), *an indexing protocol for querying networks like Ethereum and IPFS.*
 
@@ -172,6 +188,9 @@ This code snippet is what makes sure that each rejected resolution is marked as 
 If you need help setting up your graph node with IPFS for your EVMOS project, feel free to get in touch with us!
 
 ## Upgradeability
+
+
+
 ## Incremental Decentralization
 
 - temporary permissions to operator role
