@@ -22,7 +22,7 @@ Creating the groundwork to bring the first Neokingdom DAO to life (Teledisko DAO
 
 Since its inception, more than a year has been spent by the team to get the legal foundation that could guarantee the lawfulness of our initiative. It will take time for our DAO framework to merge perfectly with the Estonian legal framework. But given how closely we worked with the Estonian government, we are confident that any upcoming issue will be addressable without legal troubles.
 
-Once the first drafts of the [Articles of Association (AOA)](https://github.com/TelediskoDAO/legal/blob/v1.0.0/AoA.md) and the [Shareholders' Agreement (SHA)](https://github.com/TelediskoDAO/legal/blob/main/SHA.md) have been completed, we started developing the Smart Contracts and the dApp on top.
+Once the first drafts of the [Articles of Association (AOA)](https://github.com/TelediskoDAO/legal/blob/v1.0.0/AoA.md) and the [Shareholders' Agreement (SHA)](https://github.com/TelediskoDAO/legal/blob/v1.0.0/SHA.md) have been completed, we started developing the Smart Contracts and the dApp on top.
 
 The main challenge for the development of this first implementation of the DAO was *translating* legal documents to running code (solidity smart contracts).
 
