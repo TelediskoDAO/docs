@@ -171,11 +171,49 @@ If you need help setting up your graph node with IPFS for your EVMOS project, fe
 
 ## Upgradeability
 
+Teledisko DAO is the first experiment of what will hopefully be a series of transitions. We are positive that the work we have done is meticulous, both on the legal and technical level.
 
+It is realistic to assume, though, that given the novelty of our approach to work, some knots might emerge on the way. In order to be able to untie them, we need the flexibility to perform maintenance operations on our contract, both to fix potential security issues and also in case the law beneath should change.
+
+For this reason, we deployed all the smart contracts behind proxies. The proxy update pattern allows us to have a configuration like this (diagram sourced from [the official OpenZeppelin documentation](https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies))
+
+User ---- tx ---> Proxy ----------> Implementation_v0
+                     |
+                      ------------> Implementation_v1
+                     |
+                      ------------> Implementation_v2
+
+Each of our smart contracts is actually a proxy that points to the current implementation. Should a bug fix be needed, we can just deploy a new implementation and point the proxy to it.
+
+This configuration comes pretty much out of the box [with hardhat](https://docs.openzeppelin.com/upgrades-plugins/1.x/api-hardhat-upgrades). There are some catches of course (you can't for instance change the storage layout), but we recommend to refer to the official documentation to know the details.
 
 ## Incremental Decentralization
 
-- temporary permissions to operator role
-- resolutions could already be automated (with call data field)
+The ultimate vision of a Neokingdom DAOs is to be fully autonomous and decentralized. In the ideal world, no one inside the DAO is a single point of failure, everything that happens is triggered by all contributors and executed by the smart contracts.
+
+This though requires a very high level of automation. Postponing the launch of the first DAO until that moment would have implied a very late landing in the market and the risk of using plenty of resources before we even knew whether what we are doing makes sense. Let's remember: this is a first timer, there are many new ideas and some legal alchemy that need to be validated.
+
+We therefore decided to "go live" with the minimum necessary level of decentralization (hence automation), where us developers have still the right to operate some of the functions of the DAO (e.g.: the minting of tokens).
+
+Thanks to the upgradability of the smart contracts and the way we engineered the resolutions (the core of the DAO machinery), we will be able to slowly let go of these responsabilities.
+
+More concretely, this bit of code in `Resolution.sol` is the game changer:
+
+```
+  address[] memory to = resolution.executionTo;
+  bytes[] memory data = resolution.executionData;
+
+  resolution.executionTimestamp = block.timestamp;
+
+  for (uint256 i; i < to.length; i++) {
+    (bool success, ) = to[i].call(data[i]);
+    require(success, "Resolution: execution failed");
+  }
+```
+
+Each resolution can optionally contain some execution data and the contract that should execute it.
+Meaning that, in principle, each resolution can come also with the code that fulfills it.
+
+The possibility is there, but we are still not using it: the more we get confident about the goodness of our process, the more we can automate.
 
 ## Next steps: EEUR
