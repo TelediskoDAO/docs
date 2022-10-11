@@ -216,4 +216,14 @@ Meaning that, in principle, each resolution can come also with the code that ful
 
 The possibility is there, but we are still not using it: the more we get confident about the goodness of our process, the more we can automate.
 
-## Next steps: EEUR
+## Next steps
+
+The future of Neokingdom DAO far reaching, our vision is still at the very early stages. Indeed now we need to make sure the DAO structure for Teledisko is solid and expand the idea to other Neokingdoms.
+
+Technically speaking, though, we are aiming at achieving almost full decentralization by the next year. The next step in this direction is the management of contributors' tokens: currently, if a contributor wants to sell a token within the DAO, the offer is automated, but the match-making and consequent money transfer is manual.
+
+For this reason, we need to be able to automatically deal with Euros or Euro-equivalent cryptocurrencies within the smart contracts. 
+
+With [EVMOS Proposal #56](https://app.evmos.org/governance/56), we successfully registered EEUR inside the EVMOS ecosystem, hence laying the foundation to integrate a Euro cryptocurrency in the DAO's economy and to ultimately automate the financial processes of the company.
+
+We hope you liked the article and if you questions, feel free to jump [into our discord](https://discord.com/invite/CvcTJWD4aS). We are currently quite busy, but we would love to have you around :)
