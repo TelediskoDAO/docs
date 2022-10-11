@@ -22,7 +22,7 @@ Creating the groundwork to bring the first Neokingdom DAO to life (Teledisko DAO
 
 Since its inception, more than a year has been spent by the team to get the legal foundation that could guarantee the lawfulness of our initiative. It will take time for our DAO framework to merge perfectly with the Estonian legal framework. But given how closely we worked with the Estonian government, we are confident that any upcoming issue will be addressable without legal troubles.
 
-Once the first drafts of the [Articles of Association (AOA)](https://github.com/TelediskoDAO/legal/blob/main/AoA.md) and the [Shareholders' Agreement (SHA)](https://github.com/TelediskoDAO/legal/blob/main/SHA.md) have been completed, we started developing the Smart Contracts and the dApp on top.
+Once the first drafts of the [Articles of Association (AOA)](https://github.com/TelediskoDAO/legal/blob/v1.0.0/AoA.md) and the [Shareholders' Agreement (SHA)](https://github.com/TelediskoDAO/legal/blob/main/SHA.md) have been completed, we started developing the Smart Contracts and the dApp on top.
 
 The main challenge for the development of this first implementation of the DAO was *translating* legal documents to running code (solidity smart contracts).
 
@@ -38,7 +38,7 @@ The system architecture has 4 layers:
    1. Mailer: a cloudfront worker sending out emails to the relevant DAO participant about legally sensitive events.
    2. Dapp: this is the access point for the Contributors of the DAO. Contributors use the dapp to vote, submit new resolutions, sell tokens, and track their time. The dapp can be accessed by the general public as well to check out resolutions and votes.
 
-![Architecture](https://raw.githubusercontent.com/TelediskoDAO/docs/main/architecture.png)
+![Architecture](https://raw.githubusercontent.com/TelediskoDAO/docs/264faac43cc1b3c61d49a21e5be63fc1385c2629/architecture.png)
 
 ## Shares and Permissions
 Article `2.` of the SHA describes in aboundant detail the process of joining the DAO as Shareholder and as a Contributor. What ultimately discriminates a DAO Shareholder from any other person is described in point `2.1.3`
@@ -47,7 +47,7 @@ Article `2.` of the SHA describes in aboundant detail the process of joining the
 
 The possession of this nominal share is what ultimately defines the rights of the Shareholder with respect to the DAO: voting rights, dividend rights, etc.
 
-The logic is implemented by the [`ShareholderRegistry`](https://github.com/TelediskoDAO/contracts/tree/main/contracts/ShareholderRegistry), which is the single point of truth when it comes to the DAOs permission management.
+The logic is implemented by the [`ShareholderRegistry`](https://github.com/TelediskoDAO/contracts/tree/v1.0.0/contracts/ShareholderRegistry), which is the single point of truth when it comes to the DAOs permission management.
 
 Shares are managed by an `ERC20` contract, extended to comply with the points of the SHA. For instance:
 
@@ -76,7 +76,7 @@ On the other side, once the tokens "leave the DAO", they become free to be trade
 
 Articles `4.` and `10.` of the SHA provide all the necessary information about what the tokens of teledisko represent and how they should be regulated.
 
-The logic has been implemented within the [`TelediskoToken`](https://github.com/TelediskoDAO/contracts/tree/main/contracts/TelediskoToken). This is a beefed-up ERC20 Smart Contract.
+The logic has been implemented within the [`TelediskoToken`](https://github.com/TelediskoDAO/contracts/tree/v1.0.0/contracts/TelediskoToken). This is a beefed-up ERC20 Smart Contract.
 
 "Beefed-up" in the sense that we needed to implement different levels of "freedom" for the tokens (remember when we were talking about "socialistic on the inside, capitalistic on the inside"?).
 
@@ -90,7 +90,7 @@ For the others, we implemented a basic order book functionality within the token
 
 All of this easily visualizable (and doable) from our Dapp
 
-![Token Page](https://raw.githubusercontent.com/TelediskoDAO/docs/main/tokens_page.png)
+![Token Page](https://raw.githubusercontent.com/TelediskoDAO/docs/264faac43cc1b3c61d49a21e5be63fc1385c2629/tokens_page.png)
 
 Currently, the acceptance of the offer and the transfer of the monetary amount to the token-holder is done more or less manually (a multisig wallet changes the state of the contract, Euros are transferred via bank-wire). But we are working to integrate EEUR in our ecosystem and have a fully automated escrow mechanism inside the Smart Contracts.
 
@@ -110,9 +110,9 @@ Same applies for delegation, demotion (when a Contributor is removed from the DA
 
 Basically most of the state of the DAO is *snapshottable*, with snapshots taken every time a draft resolution is approved by the managing board.
 
-![Unnecessary but street-credits worth meme](https://raw.githubusercontent.com/TelediskoDAO/docs/main/meme.png)
+![Unnecessary but street-credits worth meme](https://raw.githubusercontent.com/TelediskoDAO/docs/264faac43cc1b3c61d49a21e5be63fc1385c2629/meme.png)
 
-The base logic is implemented in [`Snapshottable`](https://github.com/TelediskoDAO/contracts/blob/main/contracts/extensions/Snapshottable.sol), that is inherited by all the contracts of the DAO.
+The base logic is implemented in [`Snapshottable`](https://github.com/TelediskoDAO/contracts/blob/v1.0.0/contracts/extensions/Snapshottable.sol), that is inherited by all the contracts of the DAO.
 
 Each contract has then, for each relevant state-reading function, a default version and an `at` version. For instance, TelediskoToken has `balanceOf` and `balanceOfAt`, the former used to know the balance of an address for a given resolution id.
 
@@ -163,7 +163,7 @@ export function handleResolutionRejected(event: ResolutionRejected): void {
 
 This code snippet is what makes sure that each rejected resolution is marked as such inside our data-model, allowing us to show it in our dapp:
 
-![Rejected Resolutions](https://raw.githubusercontent.com/TelediskoDAO/docs/main/rejected.png)
+![Rejected Resolutions](https://raw.githubusercontent.com/TelediskoDAO/docs/264faac43cc1b3c61d49a21e5be63fc1385c2629/rejected.png)
 
 If you need help setting up your graph node with IPFS for your EVMOS project, feel free to get in touch with us!
 
@@ -197,7 +197,7 @@ We therefore decided to "go live" with the minimum necessary level of decentrali
 
 Thanks to the upgradability of the smart contracts and the way we engineered the resolutions (the core of the DAO machinery), we will be able to slowly let go of these responsabilities.
 
-More concretely, this bit of code in `Resolution.sol` is the game changer:
+More concretely, this bit of code in [`ResolutionManager.sol`](https://github.com/TelediskoDAO/contracts/tree/v1.0.0/contracts/ResolutionManager/ResolutioManager.sol) is the game changer:
 
 ```
   address[] memory to = resolution.executionTo;
