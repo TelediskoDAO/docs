@@ -1,7 +1,7 @@
 # Technical journey into the Neokingdom DAO
 ## Introduction
 
-Neokingdom DAO is relatively new but very ambitious project whose inceptions dates back to 2016.
+Neokingdom DAO is a relatively new but very ambitious project whose inception dates back to 2016.
 
 The basic idea is to provide the legal and technical framework to create DAOcracies, namely companies running with the same founding principles of a DAO.
 
@@ -22,11 +22,11 @@ Creating the groundwork to bring the first Neokingdom DAO to life (Teledisko DAO
 
 Since its inception, more than a year has been spent by the team to get the legal foundation that could guarantee the lawfulness of our initiative. It will take time for our DAO framework to merge perfectly with the Estonian legal framework. But given how closely we worked with the Estonian government, we are confident that any upcoming issue will be addressable without legal troubles.
 
-Once the first draft of the [Articles of Association (AOA)](https://github.com/TelediskoDAO/legal/blob/main/AoA.md) and the [Shareholders' Agreement (SHA)](https://github.com/TelediskoDAO/legal/blob/main/SHA.md) has been completed, we started developing the Smart Contracts and the dApp on top.
+Once the first drafts of the [Articles of Association (AOA)](https://github.com/TelediskoDAO/legal/blob/main/AoA.md) and the [Shareholders' Agreement (SHA)](https://github.com/TelediskoDAO/legal/blob/main/SHA.md) have been completed, we started developing the Smart Contracts and the dApp on top.
 
 The main challenge for the development of this first implementation of the DAO was *translating* legal documents to running code (solidity smart contracts).
 
-Before starting developing the smart contracts, we decided to spend the first weeks thoroughly studying the Articles of Association and the Shareholders' Agreement. The main point was to get to a very clear understanding of which articles could be automated with code, and how much, what could be done on-chain, and what has to be implemented off-chain. This process required quite a few iterations with the lawyers.
+Before starting the development of the smart contracts, we decided to spend the first weeks thoroughly studying the Articles of Association and the Shareholders' Agreement. The main point was to get to a very clear understanding of which articles could be automated with code, how much be done on-chain, and what had to be implemented off-chain. This process required quite a few iterations with the lawyers.
 
 ## General Architecture
 The system architecture has 4 layers:
@@ -54,29 +54,29 @@ Shares are managed by an `ERC20` contract, extended to comply with the points of
 * Every address is allowed to own 1 share maximum.
 * Shares can only be transferred after a DAO vote (which implies that only an automatically executed resolution can trigger `transferFrom`).
 
-The ownership of a share is the pre-condition to be have any of the statuses available to the DAO
+The ownership of a share is the pre-condition to have any of the statuses available to the DAO
 
 * Investor
 * Shareholed
 * Contributor
 * Managing Board
 
-The contract also provides some utility methods that the other contracts can use to, for instance, undestand whether an account can vote.
+The contract also provides some utility methods that the other contracts can use to, for instance, understand whether an account can vote.
 
-The usage of tokens to deal with the shares was not explicitely required by the legal documentation. It was a technical decision that allowed us to more easily implement the logic by re-using existing compoents. It also allowed the implementation of the Smart Contract to match more closely the specific words of the SHA.
+The usage of tokens to deal with the shares was not explicitely required by the legal documentation. It was a technical decision that allowed us to more easily implement the logic by re-using existing components. It also allowed the implementation of the Smart Contract to match more closely the specific words of the SHA.
 
 ## Tokenomics
-The tokenomics of this DAO is probably what distinguish it from most of the existing ones. As its founder said: 
+The tokenomics of this DAO is probably what distinguishes it from most of the existing ones. As its founder said: 
 
 > The system is socialist on the inside, capitalist on the outside.
 
 The way tokens are managed inside the DAO makes sure no speculative or profit-maximizing behaviour is incentivized. 
 
-On the other side, once the tokens "leave the DAO", they become free to be traded as widly and heartlessly as it gets.
+On the other side, once the tokens "leave the DAO", they become free to be traded as wildly and heartlessly as it gets.
 
 Articles `4.` and `10.` of the SHA provide all the necessary information about what the tokens of teledisko represent and how they should be regulated.
 
-The logic has been implemented with the [`TelediskoToken`](https://github.com/TelediskoDAO/contracts/tree/main/contracts/TelediskoToken). This is a beefed-up ERC20 Smart Contract.
+The logic has been implemented within the [`TelediskoToken`](https://github.com/TelediskoDAO/contracts/tree/main/contracts/TelediskoToken). This is a beefed-up ERC20 Smart Contract.
 
 "Beefed-up" in the sense that we needed to implement different levels of "freedom" for the tokens (remember when we were talking about "socialistic on the inside, capitalistic on the inside"?).
 
@@ -92,9 +92,9 @@ All of this easily visualizable (and doable) from our Dapp
 
 ![Token Page](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/tokens_page.png)
 
-Currently, the acceptance of the offer and the transfer of the monetary amount to the token-holder is done more or less manually (a multisig wallet changes the state contract, Euros are transferred via bank-wire). But we are working to integrate EEUR in our ecosystem and have a fully automated escrow mechanism inside the Smart Contracts.
+Currently, the acceptance of the offer and the transfer of the monetary amount to the token-holder is done more or less manually (a multisig wallet changes the state of the contract, Euros are transferred via bank-wire). But we are working to integrate EEUR in our ecosystem and have a fully automated escrow mechanism inside the Smart Contracts.
 
-We used ERC20 even in this case, because (on top of the same reasons expressed for the ShareholderRegistry) the legal documents explicitly talk mention `tokens` as the legal tender of the DAO.
+We used ERC20 even in this case, because (on top of the same reasons expressed for the ShareholderRegistry) the legal documents explicitly mentions `tokens` as the legal tender of the DAO.
 
 ## Governance and Snapshotting
 
@@ -127,7 +127,7 @@ The state of our DAO is tracked by two main components:
 
 As some of you probably already know, smart contracts are not the best "content delivery" service that a dapp could possibly have.
 
-For simple dapps, maybe it's sufficient to interact directly with the Smart Contract (for instance if we only need to display the current balance of ERC20 token holder), but for more complex use cases, there is a complication: the query interface. A Smart Contract is not a DB engine and has such, it offers very limited data access capabilities. The developer has to know ahead of time all the needed access patterns in order to provide functions able to serve that. Imagine having to join multiple data sets or aggregate/filter a long list of data points: would you really like to implement this logic in the Smart Contract?
+For simple dapps, maybe it's sufficient to interact directly with the Smart Contract (for instance if we only need to display the current balance of an ERC20 token holder), but for more complex use cases, there is a complication: the query interface. A Smart Contract is not a DB engine and as such, it offers very limited data access capabilities. The developer has to know ahead of time all the needed access patterns in order to provide functions able to serve that. Imagine having to join multiple data sets or aggregate/filter a long list of data points: would you really like to implement this logic in the Smart Contract?
 
 To address this issue, we decided to leverage [The Graph](https://thegraph.com/en/), *an indexing protocol for querying networks like Ethereum and IPFS.*
 
@@ -171,7 +171,7 @@ If you need help setting up your graph node with IPFS for your EVMOS project, fe
 
 Teledisko DAO is the first experiment of what will hopefully be a series of transitions. We are positive that the work we have done is meticulous, both on the legal and technical level.
 
-It is realistic to assume, though, that given the novelty of our approach to work, some knots might emerge on the way. In order to be able to untie them, we need the flexibility to perform maintenance operations on our contract, both to fix potential security issues and also in case the law beneath should change.
+It is realistic to assume, though, that given the novelty of our approach to work, some knots might emerge on the way. In order to be able to untie them, we need the flexibility to perform maintenance operations on our contracts, both to fix potential security issues and also in case the law beneath should change.
 
 For this reason, we deployed all the smart contracts behind proxies. The proxy update pattern allows us to have a configuration like this (diagram sourced from [the official OpenZeppelin documentation](https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies))
 
@@ -218,7 +218,7 @@ The possibility is there, but we are still not using it: the more we get confide
 
 ## Next steps
 
-The future of Neokingdom DAO is far reaching, and our vision is still at the very early stages. Now we need to make sure the DAO structure for Teledisko is solid and tested, and expand the framework we are building to other Neokingdoms.
+There is a magnificent future ahead of Neokingdom DAO, and our vision is still at the very early stages. Now we need to make sure the DAO structure for Teledisko is solid and tested, and expand the framework we are building to other Neokingdoms.
 
 Technically speaking, though, we are aiming to decentralize the most important features of the DAO by the end of the year. The next step in this direction is the management of contributors' tokens: currently, if a contributor wants to sell a token within the DAO, the offer is automated, but the match-making and consequent money transfer is manual.
 
