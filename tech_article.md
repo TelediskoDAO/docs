@@ -90,7 +90,7 @@ For the others, we implemented a basic order book functionality within the token
 
 All of this easily visualizable (and doable) from our Dapp
 
-![Token Page](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/tokens_page.png)
+![Token Page](https://raw.githubusercontent.com/TelediskoDAO/docs/main/tokens_page.png)
 
 Currently, the acceptance of the offer and the transfer of the monetary amount to the token-holder is done more or less manually (a multisig wallet changes the state of the contract, Euros are transferred via bank-wire). But we are working to integrate EEUR in our ecosystem and have a fully automated escrow mechanism inside the Smart Contracts.
 
@@ -110,7 +110,7 @@ Same applies for delegation, demotion (when a Contributor is removed from the DA
 
 Basically most of the state of the DAO is *snapshottable*, with snapshots taken every time a draft resolution is approved by the managing board.
 
-![Unnecessary but street-credits worth meme](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/meme.png)
+![Unnecessary but street-credits worth meme](https://raw.githubusercontent.com/TelediskoDAO/docs/main/meme.png)
 
 The base logic is implemented in [`Snapshottable`](https://github.com/TelediskoDAO/contracts/blob/main/contracts/extensions/Snapshottable.sol), that is inherited by all the contracts of the DAO.
 
@@ -163,7 +163,7 @@ export function handleResolutionRejected(event: ResolutionRejected): void {
 
 This code snippet is what makes sure that each rejected resolution is marked as such inside our data-model, allowing us to show it in our dapp:
 
-![Rejected Resolutions](https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/rejected.png)
+![Rejected Resolutions](https://raw.githubusercontent.com/TelediskoDAO/docs/main/rejected.png)
 
 If you need help setting up your graph node with IPFS for your EVMOS project, feel free to get in touch with us!
 
