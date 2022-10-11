@@ -197,7 +197,7 @@ We therefore decided to "go live" with the minimum necessary level of decentrali
 
 Thanks to the upgradability of the smart contracts and the way we engineered the resolutions (the core of the DAO machinery), we will be able to slowly let go of these responsabilities.
 
-More concretely, this bit of code in [`ResolutionManager.sol`](https://github.com/TelediskoDAO/contracts/tree/v1.0.0/contracts/ResolutionManager/ResolutioManager.sol) is the game changer:
+More concretely, this bit of code in [`ResolutionManager.sol`](https://github.com/TelediskoDAO/contracts/tree/v1.0.0/contracts/ResolutionManager/ResolutionManager.sol) is the game changer:
 
 ```
   address[] memory to = resolution.executionTo;
